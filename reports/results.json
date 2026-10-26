@@ -1,0 +1,197 @@
+{
+  "reward_models": [
+    {
+      "name": "Short-Term (Watch %)",
+      "MAE": 0.3772432208061218,
+      "RMSE": 0.4917688860211976,
+      "ROC-AUC": 0.616585751223486,
+      "Pearson_R": 0.21372148394584656
+    },
+    {
+      "name": "Long-Term (Retention + Watch)",
+      "MAE": 0.29687103629112244,
+      "RMSE": 0.36894343927492507,
+      "ROC-AUC": 0.5956766279590097,
+      "Pearson_R": 0.17137552797794342
+    }
+  ],
+  "comparison": [
+    {
+      "Model": "1. Base GPT-2 (No RL)",
+      "Recall@10": 0.23184694854953472,
+      "NDCG@10": 0.15873950696743713,
+      "MAP@10": 0.10872780627371365,
+      "Reward_Short": 0.4611824154853821,
+      "Reward_Long": 0.5839734673500061,
+      "Unique_Items@10": 50,
+      "Top1_Concentration_%": 32.20443349753695,
+      "KL_from_Base": 0.0
+    },
+    {
+      "Model": "2. RL-Short (Balanced, beta=0.20)",
+      "Recall@10": 0.2011037317225741,
+      "NDCG@10": 0.12058108633253282,
+      "MAP@10": 0.07299693147989902,
+      "Reward_Short": 0.62177574634552,
+      "Reward_Long": 0.661994457244873,
+      "Unique_Items@10": 66,
+      "Top1_Concentration_%": 79.00246305418719,
+      "KL_from_Base": 0.32953351736068726
+    },
+    {
+      "Model": "3. RL-Short (Medium, beta=0.06)",
+      "Recall@10": 0.16205406012979903,
+      "NDCG@10": 0.10093376392239847,
+      "MAP@10": 0.061724232956273176,
+      "Reward_Short": 0.6548483371734619,
+      "Reward_Long": 0.6840206980705261,
+      "Unique_Items@10": 93,
+      "Top1_Concentration_%": 80.29556650246306,
+      "KL_from_Base": 0.7154973745346069
+    },
+    {
+      "Model": "4. RL-Short (Aggressive, beta=0.005)",
+      "Recall@10": 0.12318276448510439,
+      "NDCG@10": 0.08560696909389279,
+      "MAP@10": 0.057531594631329994,
+      "Reward_Short": 0.45616814494132996,
+      "Reward_Long": 0.5966339111328125,
+      "Unique_Items@10": 35,
+      "Top1_Concentration_%": 73.95320197044335,
+      "KL_from_Base": 3.7678709030151367
+    },
+    {
+      "Model": "5. RL-LongTerm (Retention, beta=0.12)",
+      "Recall@10": 0.18549046055203688,
+      "NDCG@10": 0.10944525527449253,
+      "MAP@10": 0.06431211433328121,
+      "Reward_Short": 0.6309271454811096,
+      "Reward_Long": 0.6905409097671509,
+      "Unique_Items@10": 52,
+      "Top1_Concentration_%": 54.43349753694581,
+      "KL_from_Base": 0.2511240839958191
+    }
+  ],
+  "rollout_5steps": [
+    {
+      "Model": "Base GPT-2",
+      "Step": 1,
+      "Expected_Reward_Short": 0.6213434338569641,
+      "Expected_Reward_Long": 0.6056884527206421,
+      "Unique_Items_Step": 8,
+      "Self_Repeat_Rate_%": 0.0
+    },
+    {
+      "Model": "Base GPT-2",
+      "Step": 2,
+      "Expected_Reward_Short": 0.6421927213668823,
+      "Expected_Reward_Long": 0.6195056438446045,
+      "Unique_Items_Step": 8,
+      "Self_Repeat_Rate_%": 17.59999990463257
+    },
+    {
+      "Model": "Base GPT-2",
+      "Step": 3,
+      "Expected_Reward_Short": 0.7403383255004883,
+      "Expected_Reward_Long": 0.6204987168312073,
+      "Unique_Items_Step": 8,
+      "Self_Repeat_Rate_%": 35.600000619888306
+    },
+    {
+      "Model": "Base GPT-2",
+      "Step": 4,
+      "Expected_Reward_Short": 0.7853061556816101,
+      "Expected_Reward_Long": 0.5731271505355835,
+      "Unique_Items_Step": 8,
+      "Self_Repeat_Rate_%": 73.19999933242798
+    },
+    {
+      "Model": "Base GPT-2",
+      "Step": 5,
+      "Expected_Reward_Short": 0.787531852722168,
+      "Expected_Reward_Long": 0.5798667669296265,
+      "Unique_Items_Step": 8,
+      "Self_Repeat_Rate_%": 68.80000233650208
+    },
+    {
+      "Model": "RL-LongTerm (beta=0.12)",
+      "Step": 1,
+      "Expected_Reward_Short": 0.7773548364639282,
+      "Expected_Reward_Long": 0.7158032059669495,
+      "Unique_Items_Step": 2,
+      "Self_Repeat_Rate_%": 0.0
+    },
+    {
+      "Model": "RL-LongTerm (beta=0.12)",
+      "Step": 2,
+      "Expected_Reward_Short": 0.7987908720970154,
+      "Expected_Reward_Long": 0.7520302534103394,
+      "Unique_Items_Step": 2,
+      "Self_Repeat_Rate_%": 20.20000070333481
+    },
+    {
+      "Model": "RL-LongTerm (beta=0.12)",
+      "Step": 3,
+      "Expected_Reward_Short": 0.8207576274871826,
+      "Expected_Reward_Long": 0.8502637147903442,
+      "Unique_Items_Step": 2,
+      "Self_Repeat_Rate_%": 97.79999852180481
+    },
+    {
+      "Model": "RL-LongTerm (beta=0.12)",
+      "Step": 4,
+      "Expected_Reward_Short": 0.8233810067176819,
+      "Expected_Reward_Long": 0.8022003769874573,
+      "Unique_Items_Step": 2,
+      "Self_Repeat_Rate_%": 99.00000095367432
+    },
+    {
+      "Model": "RL-LongTerm (beta=0.12)",
+      "Step": 5,
+      "Expected_Reward_Short": 0.8595173358917236,
+      "Expected_Reward_Long": 0.7247143983840942,
+      "Unique_Items_Step": 2,
+      "Self_Repeat_Rate_%": 99.19999837875366
+    },
+    {
+      "Model": "RL-Aggressive (beta=0.005)",
+      "Step": 1,
+      "Expected_Reward_Short": 0.733505129814148,
+      "Expected_Reward_Long": 0.6920567750930786,
+      "Unique_Items_Step": 1,
+      "Self_Repeat_Rate_%": 0.0
+    },
+    {
+      "Model": "RL-Aggressive (beta=0.005)",
+      "Step": 2,
+      "Expected_Reward_Short": 0.7270326018333435,
+      "Expected_Reward_Long": 0.46963492035865784,
+      "Unique_Items_Step": 1,
+      "Self_Repeat_Rate_%": 100.0
+    },
+    {
+      "Model": "RL-Aggressive (beta=0.005)",
+      "Step": 3,
+      "Expected_Reward_Short": 0.7534851431846619,
+      "Expected_Reward_Long": 0.3234434425830841,
+      "Unique_Items_Step": 1,
+      "Self_Repeat_Rate_%": 100.0
+    },
+    {
+      "Model": "RL-Aggressive (beta=0.005)",
+      "Step": 4,
+      "Expected_Reward_Short": 0.7730797529220581,
+      "Expected_Reward_Long": 0.2772780954837799,
+      "Unique_Items_Step": 1,
+      "Self_Repeat_Rate_%": 100.0
+    },
+    {
+      "Model": "RL-Aggressive (beta=0.005)",
+      "Step": 5,
+      "Expected_Reward_Short": 0.7885459065437317,
+      "Expected_Reward_Long": 0.260775625705719,
+      "Unique_Items_Step": 1,
+      "Self_Repeat_Rate_%": 100.0
+    }
+  ]
+}
